@@ -1,4 +1,4 @@
-<p id="notice"></p>
+<p id="notice">Book was successfully destroyed.</p>
 <h1>Book</h1>
 <table>
   <thead>
@@ -13,12 +13,15 @@
     <tr>
       <td><%= book.title %></td>
       <td><%= book.body %></td>
-    </tr
-    
+      <td><%= link_to "Show", book_path(book) %></td>
+      <td><%= link_to "Edit", edit_book_path(book) %></td>
+      <td><%= link_to "Destroy", book_path(book),method: :delete %></td>
+    </tr>
   <% end %>
   </tbody>
 </table>
-  
+
+
   <h2>New Book</h2>
 <%= form_with model:@book,local:true do |f| %>
 
