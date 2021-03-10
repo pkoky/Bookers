@@ -1,5 +1,4 @@
-<p id="notice">Book was successfully destroyed.</p>
-<h1>Book</h1>
+<h1>Books</h1>
 <table>
   <thead>
     <tr>
@@ -25,7 +24,7 @@
   <h2>New Book</h2>
 <%= form_with model:@book,local:true do |f| %>
 
-<div class="fielld">
+<div class="field">
   <label for="book_totle">Title</label>
   <%= f.text_field :title %>
 </div>
