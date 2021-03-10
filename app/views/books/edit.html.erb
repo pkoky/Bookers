@@ -5,9 +5,14 @@
     <label for="book_title">Title</label>
     <%= f.text_field :title %>
 </div>
-<div class="action">
+<div class="field">
     <label for="book-body">Body</label>
     <%= f.text_area :body %>
 </div>
-<%= f.submit "Update Book" %>
+<div class="actions">
+     <%= f.submit "Update Book" %>
+</div>
+<%= link_to "Show", book_path(@book) %>
+|
+<%= link_to "Back", books_path(@book) %>
 <% end %>

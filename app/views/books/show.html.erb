@@ -1,4 +1,4 @@
-<p id="notice">Book was successfully updated.</p>
+<p id="notice"><%= flash[:notice] %></p>
 <p>
     <strong>Title:</strong>
     <%= @book.title %>
@@ -9,4 +9,5 @@
 </p>
 
 <%= link_to "Edit", edit_book_path(@book.id) %>
+|
 <%= link_to "Back", books_path %>
