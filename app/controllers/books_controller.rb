@@ -13,21 +13,22 @@ class BooksController < ApplicationController
     if book.update(book_params)
       flash[:notice] = "Book was successfully updated"
       redirect_to book_path(book)
+    else
+      render :edit
     end
   end
 
   def create
-    book = Book.new(book_params)
-    if book.save
+    @book = Book.new(book_params)
+    if @book.save
       flash[:notice] = "Book was successfully created."
-      redirect_to book_path(book.id)
+      redirect_to book_path(@book.id)
     else
-      flash.now[:danger] = '登録に失敗しました'
-      render :new
-    redirect_to book_path(book.id)
+      @books = Book.all
+      # @book = Book.new
+      render :index
     end 
   end
-
 
   def show
     @book = Book.find(params[:id])

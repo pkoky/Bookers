@@ -22,8 +22,15 @@
 
 
   <h2>New Book</h2>
-<%= form_with model:@book,local:true do |f| %>
+  
+  
+ 
 
+<%= form_with model:@book, local:true do |f| %>
+  <% if @book.errors.any? %>
+   <p>空欄です</p>
+  <% end %>
+ 
 <div class="field">
   <label for="book_totle">Title</label>
   <%= f.text_field :title %>
